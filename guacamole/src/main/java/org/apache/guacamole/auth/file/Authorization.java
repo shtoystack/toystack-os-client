@@ -185,7 +185,6 @@ public class Authorization {
         // If username matches
         if (username != null && password != null
                 && username.equals(this.username)) {
-            system.out.println("encoding",encoding);
             switch (encoding) {
 
                 // If plain text, just compare
