@@ -22,7 +22,7 @@ INSERT INTO guacamole_entity (name, type) VALUES ('toystackadmin', 'USER');
 INSERT INTO guacamole_user (entity_id, password_hash, password_salt, password_date)
 SELECT
     entity_id,
-    decode('0bdba22d8d5704eec8b5c5c435806084400e5e35b5ebc8c1ef0fb706ca0e627f', 'hex'),  -- 'toystackadmin'
+    decode('0bdba22d8d5704eec8b5c5c435806084400e5e35b5ebc8c1ef0fb706ca0e627f', 'hex'),  -- 'guacadmin'
     decode('0399962c153c9a36238a06f1923e93974d974c3b9fd4833c6177e745af386627', 'hex'),
     CURRENT_TIMESTAMP
 FROM guacamole_entity WHERE name = 'toystackadmin' AND guacamole_entity.type = 'USER';
