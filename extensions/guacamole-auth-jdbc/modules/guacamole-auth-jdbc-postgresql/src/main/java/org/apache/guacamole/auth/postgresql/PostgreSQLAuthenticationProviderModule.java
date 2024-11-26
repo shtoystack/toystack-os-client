@@ -61,13 +61,13 @@ public class PostgreSQLAuthenticationProviderModule implements Module {
 
         // Set the PostgreSQL-specific properties for MyBatis.
         myBatisProperties.setProperty("mybatis.environment.id", "guacamole");
-        myBatisProperties.setProperty("JDBC.host", "ts-toystackos1-xez5d-prod.toystack.store");
-        myBatisProperties.setProperty("JDBC.port", "15471");
-        myBatisProperties.setProperty("JDBC.schema", "postgres?currentSchema=toystackos");
+        myBatisProperties.setProperty("JDBC.host", environment.getPostgreSQLHostname());
+        myBatisProperties.setProperty("JDBC.port", String.valueOf(environment.getPostgreSQLPort()));
+        myBatisProperties.setProperty("JDBC.schema", environment.getPostgreSQLDatabase());
         myBatisProperties.setProperty("JDBC.autoCommit", "false");
         myBatisProperties.setProperty("JDBC.database", "postgres");     // Your database name
-        myBatisProperties.setProperty("JDBC.username", "postgres");     // Your PostgreSQL username
-        myBatisProperties.setProperty("JDBC.password", "toystack");
+        myBatisProperties.setProperty("JDBC.username", environment.getUsername());     // Your PostgreSQL username
+        myBatisProperties.setProperty("JDBC.password", environment.getPassword());
         myBatisProperties.setProperty("mybatis.pooled.pingEnabled", "true");
         myBatisProperties.setProperty("mybatis.pooled.pingQuery", "SELECT 1");
 

@@ -41,12 +41,12 @@ public class PostgreSQLEnvironment extends JDBCEnvironment {
     /**
      * The default host to connect to, if POSTGRESQL_HOSTNAME is not specified.
      */
-    private static final String DEFAULT_HOSTNAME = "ts-toystackos1-xez5d-prod.toystack.store";
+      private static final String DEFAULT_HOSTNAME = "localhost";
 
     /**
      * The default port to connect to, if POSTGRESQL_PORT is not specified.
      */
-    private static final int DEFAULT_PORT = 15471;
+    private static final int DEFAULT_PORT = 5432;
 
     /**
      * The default number of seconds the driver will wait for a response from
